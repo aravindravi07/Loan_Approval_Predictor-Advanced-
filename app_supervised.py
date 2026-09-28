@@ -617,10 +617,6 @@ f1 = f1_score(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred)
 
 
-# =========================================================
-# DATASET SUMMARY
-# =========================================================
-
 total_applications = len(df)
 
 approved = int(
@@ -642,9 +638,6 @@ rejection_rate = (
 ) * 100
 
 
-# =========================================================
-# GROUP DATA
-# =========================================================
 
 approved_df = df[
     df["loan_status"] == 1
@@ -654,10 +647,6 @@ rejected_df = df[
     df["loan_status"] == 0
 ]
 
-
-# =========================================================
-# AVERAGES
-# =========================================================
 
 approved_income = approved_df["income"].mean()
 rejected_income = rejected_df["income"].mean()
@@ -677,10 +666,6 @@ rejected_employment = rejected_df[
 ].mean()
 
 
-# =========================================================
-# MAIN TITLE
-# =========================================================
-
 st.title(
     "🏦 Advanced Loan Approval Prediction System"
 )
@@ -691,11 +676,6 @@ st.caption(
 
 
 st.divider()
-
-
-# =========================================================
-# DATASET OVERVIEW
-# =========================================================
 
 st.header("Dataset Overview")
 
@@ -745,10 +725,6 @@ st.write("")
 st.divider()
 
 
-# =========================================================
-# NAVIGATION
-# =========================================================
-
 st.header("Project Modules")
 
 page = st.radio(
@@ -765,10 +741,6 @@ page = st.radio(
 
 st.divider()
 
-
-# =========================================================
-# OVERVIEW
-# =========================================================
 
 if page == "Overview":
 
@@ -860,10 +832,6 @@ if page == "Overview":
         hide_index=True
     )
 
-
-# =========================================================
-# PREDICTION
-# =========================================================
 
 elif page == "Prediction":
 
@@ -1010,10 +978,6 @@ elif page == "Prediction":
             )
 
 
-# =========================================================
-# DATA ANALYSIS
-# =========================================================
-
 elif page == "Data Analysis":
 
     st.header("Data Analysis")
@@ -1023,11 +987,6 @@ elif page == "Data Analysis":
         "outcomes and compares applicant characteristics "
         "between approved and rejected applications."
     )
-
-
-    # =====================================================
-    # 1. OUTCOME DISTRIBUTION
-    # =====================================================
 
     st.subheader(
         "1. Loan Approval Distribution"
@@ -1119,9 +1078,6 @@ elif page == "Data Analysis":
     st.divider()
 
 
-    # =====================================================
-    # 2. CREDIT SCORE ANALYSIS
-    # =====================================================
 
     st.subheader(
         "2. Credit Score Analysis"
@@ -1291,10 +1247,6 @@ elif page == "Data Analysis":
     st.divider()
 
 
-    # =====================================================
-    # 4. LOAN AMOUNT ANALYSIS
-    # =====================================================
-
     st.subheader(
         "4. Loan Amount Analysis"
     )
@@ -1375,11 +1327,6 @@ elif page == "Data Analysis":
 
 
     st.divider()
-
-
-    # =====================================================
-    # 5. EMPLOYMENT ANALYSIS
-    # =====================================================
 
     st.subheader(
         "5. Employment Experience Analysis"
@@ -1463,10 +1410,6 @@ elif page == "Data Analysis":
     st.divider()
 
 
-    # =====================================================
-    # 6. STATISTICAL SUMMARY
-    # =====================================================
-
     st.subheader(
         "6. Comparative Statistical Summary"
     )
@@ -1511,11 +1454,6 @@ elif page == "Data Analysis":
         "individual feature causes loan approval or rejection."
     )
 
-
-# =========================================================
-# MODEL PERFORMANCE
-# =========================================================
-
 elif page == "Model Performance":
 
     st.header("Model Performance")
@@ -1524,11 +1462,6 @@ elif page == "Model Performance":
         "Evaluation of the Logistic Regression model "
         "using the held-out test dataset."
     )
-
-
-    # =====================================================
-    # METRICS
-    # =====================================================
 
     col1, col2, col3, col4 = st.columns(4)
 
@@ -1679,11 +1612,6 @@ elif page == "Model Performance":
         and recall into a single performance measure.
         """
     )
-
-
-# =========================================================
-# FOOTER
-# =========================================================
 
 st.divider()
 
