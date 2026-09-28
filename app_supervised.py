@@ -573,10 +573,6 @@ model = joblib.load("loan_model.pkl")
 scaler = joblib.load("preprocessor.pkl")
 
 
-# =========================================================
-# FEATURES AND TARGET
-# =========================================================
-
 features = [
     "income",
     "credit_score",
@@ -587,11 +583,6 @@ features = [
 X = df[features]
 
 y = df["loan_status"]
-
-
-# =========================================================
-# TRAIN / TEST SPLIT
-# =========================================================
 
 X_train, X_test, y_train, y_test = train_test_split(
     X,
